@@ -987,4 +987,10 @@ const seatIds = positionInputs.map((position) => {
 })
 
 const max = Math.max(...seatIds)
-console.log(max)
+const toCheck = seatIds.sort().slice(0 + 100, seatIds.length - 100);
+
+for (let i = 0; i < toCheck.length; i++) {
+    if (!toCheck.includes(i) && toCheck.includes(i-1) && toCheck.includes(i+1)) {
+        console.log(i)
+    }
+}
